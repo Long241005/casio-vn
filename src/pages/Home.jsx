@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Clock, Award } from "lucide-react";
 import { useStore } from "../store/useStore.js";
 import ProductCard from "../components/ProductCard.jsx";
+import WatchGallery from "../components/WatchGallery.jsx";
 
 export default function Home() {
   const { products } = useStore();
@@ -56,103 +57,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Watch Showcase Section */}
-      <div className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-4">
-            Bộ sưu tập nổi bật
-          </h2>
-          <p className="text-gray-600 text-center mb-12 text-lg">
-            Khám phá các mẫu đồng hồ Casio đa dạng và sang trọng
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* G-Shock Showcase */}
-            <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-black">
-              <img
-                src="/watch-hero-1.jpg"
-                alt="G-Shock Watch"
-                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-8 text-white">
-                <h3 className="text-3xl font-bold mb-2">G-Shock</h3>
-                <p className="text-gray-300 mb-4">
-                  Đồng hồ chống sốc huyền thoại, bền bỉ với mọi địa hình
-                </p>
-                <Link
-                  to="/shop"
-                  className="inline-block bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-6 py-2 rounded-lg transition-all w-fit"
-                >
-                  Xem chi tiết
-                </Link>
-              </div>
-            </div>
-
-            {/* Edifice Showcase */}
-            <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-black">
-              <img
-                src="/watch-hero-2.jpg"
-                alt="Edifice Watch"
-                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-8 text-white">
-                <h3 className="text-3xl font-bold mb-2">Edifice</h3>
-                <p className="text-gray-300 mb-4">
-                  Thiết kế sang trọng dành cho những người thành công
-                </p>
-                <Link
-                  to="/shop"
-                  className="inline-block bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-6 py-2 rounded-lg transition-all w-fit"
-                >
-                  Xem chi tiết
-                </Link>
-              </div>
-            </div>
-
-            {/* Baby-G Showcase */}
-            <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-black">
-              <img
-                src="/watch-hero-3.jpg"
-                alt="Baby-G Watch"
-                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-8 text-white">
-                <h3 className="text-3xl font-bold mb-2">Baby-G</h3>
-                <p className="text-gray-300 mb-4">
-                  Phong cách năng động dành cho các bạn trẻ
-                </p>
-                <Link
-                  to="/shop"
-                  className="inline-block bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-6 py-2 rounded-lg transition-all w-fit"
-                >
-                  Xem chi tiết
-                </Link>
-              </div>
-            </div>
-
-            {/* Classic Showcase */}
-            <div className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-black">
-              <img
-                src="/watch-hero-4.jpg"
-                alt="Classic Watch"
-                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-8 text-white">
-                <h3 className="text-3xl font-bold mb-2">Classic</h3>
-                <p className="text-gray-300 mb-4">
-                  Thiết kế cổ điển vượt thời gian, thanh lịch
-                </p>
-                <Link
-                  to="/shop"
-                  className="inline-block bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-6 py-2 rounded-lg transition-all w-fit"
-                >
-                  Xem chi tiết
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Watch Gallery Section */}
+      <WatchGallery />
 
       {/* Features Section */}
       <div className="py-20 bg-white">
