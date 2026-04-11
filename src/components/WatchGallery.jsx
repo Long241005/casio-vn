@@ -95,24 +95,11 @@ export default function WatchGallery() {
                     isActive ? "opacity-100 scale-100" : "opacity-0 scale-95"
                   }`}
                 >
-                  <div className="relative w-full h-full group cursor-pointer">
-                    <img
-                      src={watch.image}
-                      alt={watch.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    {/* Overlay on Hover */}
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-12">
-                      <div className="text-white">
-                        <h3 className="text-4xl font-bold mb-2">
-                          {watch.name}
-                        </h3>
-                        <p className="text-lg text-gray-100">
-                          {watch.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <img
+                    src={watch.image}
+                    alt={watch.name}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
               );
             })}
@@ -121,17 +108,17 @@ export default function WatchGallery() {
           {/* Left Arrow - Inside Image */}
           <button
             onClick={prevSlide}
-            className="absolute left-8 z-20 p-4 rounded-full bg-white/80 hover:bg-white text-black transition-all hover:scale-110 shadow-lg"
+            className="absolute left-6 z-20 p-2 rounded-full bg-white/70 hover:bg-white text-black transition-all hover:scale-110 shadow-md"
           >
-            <ChevronLeft size={40} />
+            <ChevronLeft size={24} />
           </button>
 
           {/* Right Arrow - Inside Image */}
           <button
             onClick={nextSlide}
-            className="absolute right-8 z-20 p-4 rounded-full bg-white/80 hover:bg-white text-black transition-all hover:scale-110 shadow-lg"
+            className="absolute right-6 z-20 p-2 rounded-full bg-white/70 hover:bg-white text-black transition-all hover:scale-110 shadow-md"
           >
-            <ChevronRight size={40} />
+            <ChevronRight size={24} />
           </button>
 
           {/* Pagination Dots - Bottom Center */}
@@ -149,10 +136,7 @@ export default function WatchGallery() {
             ))}
           </div>
 
-          {/* Floating Chat Button */}
-          <button className="absolute bottom-8 right-8 w-16 h-16 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-30">
-            <span className="text-2xl">💬</span>
-          </button>
+
         </div>
       </div>
     </div>
