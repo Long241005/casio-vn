@@ -12,47 +12,100 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <div className="relative h-screen bg-black flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/watch-banner.jpg')] bg-cover bg-center opacity-40"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent"></div>
+      {/* Hero Section with Video */}
+      <div className="relative h-screen bg-black flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source
+            src="https://commondatastorage.googleapis.com/gtv-videos-library/sample/ForBiggerBlazes.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-white z-10 w-full flex items-center">
-          <div className="max-w-2xl">
-            <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
-              CASIO
-              <br />
-              <span className="text-yellow-400">VIỆT NAM</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-10 text-gray-200">
-              Đồng hồ chính hãng Nhật Bản
-              <br />
-              Chất lượng vượt thời gian
-            </p>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/shop"
-                className="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-10 py-4 rounded-xl text-lg inline-flex items-center gap-3 transition-all"
-              >
-                Mua sắm ngay
-                <ArrowRight size={24} />
-              </Link>
-
-              <Link
-                to="/shop"
-                className="border-2 border-white hover:bg-white hover:text-black font-semibold px-10 py-4 rounded-xl text-lg transition-all"
-              >
-                Khám phá bộ sưu tập
-              </Link>
-            </div>
-          </div>
+        {/* Content */}
+        <div className="relative z-10 text-center px-6 max-w-3xl">
+          <h1 className="text-6xl md:text-7xl font-bold text-yellow-400 mb-6">
+            CASIO VIỆT NAM
+          </h1>
+          <p className="text-xl md:text-2xl text-white mb-12">
+            Khám phá bộ sưu tập đồng hồ vượt thời gian
+          </p>
         </div>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-20">
           <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
             <div className="w-1 h-3 bg-white rounded-full mt-2 animate-scroll"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Watch Showcase - 4 Images */}
+      <div className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {/* G-Shock */}
+            <div className="relative group rounded-2xl overflow-hidden bg-black h-80 cursor-pointer">
+              <img
+                src="/watch-hero-1.jpg"
+                alt="G-Shock Watch"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Edifice */}
+            <div className="relative group rounded-2xl overflow-hidden bg-black h-80 cursor-pointer">
+              <img
+                src="/watch-hero-2.jpg"
+                alt="Edifice Watch"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Baby-G */}
+            <div className="relative group rounded-2xl overflow-hidden bg-black h-80 cursor-pointer">
+              <img
+                src="/watch-hero-3.jpg"
+                alt="Baby-G Watch"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Classic */}
+            <div className="relative group rounded-2xl overflow-hidden bg-black h-80 cursor-pointer">
+              <img
+                src="/watch-hero-4.jpg"
+                alt="Classic Watch"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/shop"
+              className="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-10 py-4 rounded-xl text-lg inline-flex items-center gap-3 transition-all justify-center"
+            >
+              Mua sắm ngay
+              <ArrowRight size={24} />
+            </Link>
+
+            <Link
+              to="/shop"
+              className="border-2 border-black hover:bg-black hover:text-white font-semibold px-10 py-4 rounded-xl text-lg transition-all"
+            >
+              Khám phá bộ sưu tập
+            </Link>
           </div>
         </div>
       </div>
