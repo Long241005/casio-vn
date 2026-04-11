@@ -41,14 +41,25 @@ export default function Shop() {
   }, [products, searchTerm, selectedCategory, sortBy]);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10">
-      {/* Header */}
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold text-center mb-2">Cửa Hàng Casio</h1>
-        <p className="text-gray-600 text-center">
-          Khám phá bộ sưu tập đồng hồ Casio chính hãng
-        </p>
+    <div className="min-h-screen">
+      {/* Shop Banner */}
+      <div className="relative h-80 bg-black overflow-hidden mb-12">
+        <img
+          src="/watch-banner.jpg"
+          alt="Shop Banner"
+          className="w-full h-full object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent flex flex-col justify-center">
+          <div className="max-w-7xl mx-auto px-6 text-white w-full">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4">Cửa Hàng Casio</h1>
+            <p className="text-xl text-gray-300 max-w-2xl">
+              Khám phá bộ sưu tập đồng hồ Casio chính hãng - Chất lượng Nhật Bản, Bảo hành uy tín
+            </p>
+          </div>
+        </div>
       </div>
+
+      <div className="max-w-7xl mx-auto px-6 pb-10">
 
       {/* Bộ lọc và tìm kiếm */}
       <div className="bg-white p-6 rounded-2xl shadow-sm mb-8">
@@ -131,6 +142,7 @@ export default function Shop() {
           </button>
         </div>
       )}
+      </div>
     </div>
   );
 }
