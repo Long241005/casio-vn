@@ -3,6 +3,7 @@ import { ArrowRight, Shield, Clock, Award } from "lucide-react";
 import { useStore } from "../store/useStore.js";
 import ProductCard from "../components/ProductCard.jsx";
 import WatchGallery from "../components/WatchGallery.jsx";
+import FloatingContact from "../components/FloatingContact.jsx";
 
 export default function Home() {
   const { products } = useStore();
@@ -12,6 +13,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <FloatingContact />
       {/* Hero Section with Video */}
       <div className="relative h-screen bg-black flex items-center justify-center overflow-hidden">
         {/* Video Background */}
