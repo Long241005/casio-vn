@@ -25,9 +25,9 @@ export default function AdminSidebar() {
   ];
 
   return (
-    <div className="w-64 bg-slate-900 text-white h-screen fixed left-0 top-0 overflow-y-auto pt-20 shadow-lg">
+    <div className="w-64 bg-slate-900 text-white h-screen fixed left-0 top-0 overflow-y-auto shadow-lg">
       {/* Menu Items */}
-      <div className="p-6 space-y-2">
+      <div className="p-6 pt-8 space-y-2">
         <div className="mb-6">
           <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">QUẢN LÝ</p>
         </div>

@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Home from "./pages/Home.jsx";
 import Shop from "./pages/Shop.jsx";
@@ -16,11 +16,16 @@ import AdminUsers from "./pages/admin/Users.jsx";
 import AdminReports from "./pages/admin/Reports.jsx";
 
 function App() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith("/admin");
+  const isAuthRoute = ["/login", "/register"].includes(location.pathname);
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      {/* Navbar chỉ hiển thị trên non-admin routes */}
+      {!isAdminRoute && <Navbar />}
 
-      <main className="pt-16">
+      <main className={isAdminRoute ? "" : "pt-16"}>
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Home />} />
