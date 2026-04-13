@@ -136,7 +136,40 @@ const useStore = create((set, get) => ({
     });
   },
 
-  clearCart: () => set({ cart: [] })
+  clearCart: () => set({ cart: [] }),
+
+  // Orders - Mock data cho dashboard
+  orders: [
+    { id: "ORD001", date: "2025-04-01", customer: "Nguyễn Văn A", product: "G-Shock DW-5600BB", amount: 2450000, status: "Completed", items: 1 },
+    { id: "ORD002", date: "2025-04-01", customer: "Trần Thị B", product: "Edifice EF-527D-1A", amount: 3890000, status: "Completed", items: 1 },
+    { id: "ORD003", date: "2025-04-02", customer: "Phạm Văn C", product: "Baby-G BGD-565-7", amount: 1890000, status: "Processing", items: 2 },
+    { id: "ORD004", date: "2025-04-02", customer: "Lê Thị D", product: "Casio AE-1200WH", amount: 890000, status: "Completed", items: 1 },
+    { id: "ORD005", date: "2025-04-03", customer: "Hoàng Văn E", product: "G-Shock GA-2100-1A", amount: 2890000, status: "Completed", items: 1 },
+    { id: "ORD006", date: "2025-04-03", customer: "Đỗ Thị F", product: "Edifice EFV-610D-1A", amount: 3290000, status: "Shipping", items: 1 },
+    { id: "ORD007", date: "2025-04-04", customer: "Vũ Văn G", product: "Baby-G BA-110-1A", amount: 2290000, status: "Completed", items: 1 },
+    { id: "ORD008", date: "2025-04-04", customer: "Phan Thị H", product: "G-Shock DW-5600E-1V", amount: 2190000, status: "Completed", items: 3 },
+    { id: "ORD009", date: "2025-04-05", customer: "Bùi Văn I", product: "Edifice EFR-571D-1A", amount: 4190000, status: "Pending", items: 1 },
+    { id: "ORD010", date: "2025-04-05", customer: "Dương Thị J", product: "Baby-G BGA-230-7A", amount: 1990000, status: "Completed", items: 2 },
+    { id: "ORD011", date: "2025-04-06", customer: "Tô Văn K", product: "G-Shock GA-700-1A", amount: 2690000, status: "Completed", items: 1 },
+    { id: "ORD012", date: "2025-04-06", customer: "Tạ Thị L", product: "Casio MTP-1300D-1A", amount: 1290000, status: "Completed", items: 1 },
+    { id: "ORD013", date: "2025-04-07", customer: "Phan Văn M", product: "G-Shock GA-110GB-1A", amount: 3290000, status: "Shipping", items: 2 },
+    { id: "ORD014", date: "2025-04-07", customer: "Nhuận Thị N", product: "Edifice ECB-900DB-1A", amount: 5290000, status: "Completed", items: 1 },
+    { id: "ORD015", date: "2025-04-08", customer: "Quý Văn O", product: "Baby-G BGD-565-7", amount: 1890000, status: "Processing", items: 1 },
+    { id: "ORD016", date: "2025-04-08", customer: "Hằng Thị P", product: "G-Shock GW-M5610-1", amount: 3990000, status: "Completed", items: 1 },
+    { id: "ORD017", date: "2025-04-09", customer: "Sơn Văn Q", product: "Casio AE-1200WH", amount: 890000, status: "Completed", items: 4 },
+    { id: "ORD018", date: "2025-04-09", customer: "Yến Thị R", product: "G-Shock GA-2100K-5A", amount: 2990000, status: "Shipping", items: 1 },
+    { id: "ORD019", date: "2025-04-10", customer: "Tú Văn S", product: "Edifice EF-527D-1A", amount: 3890000, status: "Completed", items: 2 },
+    { id: "ORD020", date: "2025-04-10", customer: "Linh Thị T", product: "Baby-G BA-110-1A", amount: 2290000, status: "Pending", items: 1 },
+  ],
+
+  addOrder: (order) => {
+    const newOrder = {
+      ...order,
+      id: `ORD${String(get().orders.length + 1).padStart(3, "0")}`
+    };
+    set({ orders: [...get().orders, newOrder] });
+    return newOrder;
+  }
 }));
 
 export { useStore };

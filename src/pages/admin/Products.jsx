@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useStore } from "../../store/useStore.js";
+import AdminLayout from "../../components/AdminLayout.jsx";
 import { Plus, Edit2, Trash2 } from "lucide-react";
 
 export default function AdminProducts() {
@@ -66,7 +67,8 @@ export default function AdminProducts() {
   };
 
   return (
-    <div className="p-8 max-w-7xl mx-auto">
+    <AdminLayout>
+      <div className="p-8 max-w-7xl mx-auto">
       <div className="flex justify-between items-center mb-10">
         <h1 className="text-4xl font-bold">Quản lý Sản phẩm</h1>
         <button
@@ -211,5 +213,6 @@ export default function AdminProducts() {
         </table>
       </div>
     </div>
+    </AdminLayout>
   );
 }
